@@ -1,0 +1,17 @@
+C:\Users\furka\source\repos\Company\Company.BusinessLayer\bin\Debug\Company.BusinessLayer.dll.config
+C:\Users\furka\source\repos\Company\Company.BusinessLayer\bin\Debug\Company.BusinessLayer.dll
+C:\Users\furka\source\repos\Company\Company.BusinessLayer\bin\Debug\Company.BusinessLayer.pdb
+C:\Users\furka\source\repos\Company\Company.BusinessLayer\bin\Debug\Company.DataAccessLayer.dll
+C:\Users\furka\source\repos\Company\Company.BusinessLayer\bin\Debug\Company.EntityLayer.dll
+C:\Users\furka\source\repos\Company\Company.BusinessLayer\bin\Debug\EntityFramework.dll
+C:\Users\furka\source\repos\Company\Company.BusinessLayer\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\furka\source\repos\Company\Company.BusinessLayer\bin\Debug\Company.DataAccessLayer.pdb
+C:\Users\furka\source\repos\Company\Company.BusinessLayer\bin\Debug\Company.DataAccessLayer.dll.config
+C:\Users\furka\source\repos\Company\Company.BusinessLayer\bin\Debug\Company.EntityLayer.pdb
+C:\Users\furka\source\repos\Company\Company.BusinessLayer\bin\Debug\EntityFramework.xml
+C:\Users\furka\source\repos\Company\Company.BusinessLayer\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\furka\source\repos\Company\Company.BusinessLayer\obj\Debug\Company.BusinessLayer.csproj.AssemblyReference.cache
+C:\Users\furka\source\repos\Company\Company.BusinessLayer\obj\Debug\Company.BusinessLayer.csproj.CoreCompileInputs.cache
+C:\Users\furka\source\repos\Company\Company.BusinessLayer\obj\Debug\Company.BusinessLayer.csproj.CopyComplete
+C:\Users\furka\source\repos\Company\Company.BusinessLayer\obj\Debug\Company.BusinessLayer.dll
+C:\Users\furka\source\repos\Company\Company.BusinessLayer\obj\Debug\Company.BusinessLayer.pdb

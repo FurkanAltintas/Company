@@ -1,0 +1,100 @@
+﻿@model IEnumerable<Company.EntityLayer.Concrete.Blog>
+
+@{
+    ViewBag.Title = "Blog";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!-- ======= Blog Header ======= -->
+<div class="header-bg page-area">
+    <div class="container position-relative">
+        <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="slider-content text-center">
+                    <div class="header-bottom">
+                        <div class="layer2">
+                            <h1 class="title2">My Blog</h1>
+                        </div>
+                        <div class="layer3">
+                            <h2 class="title3">Profesional Blog Page</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div><!-- End Blog Header -->
+<!-- ======= Blog Page ======= -->
+<div class="blog-page area-padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-md-4">
+                <div class="page-head-blog">
+                    <div class="single-blog-page">
+                        <!-- search option start -->
+                        <form action="#">
+                            <div class="search-option">
+                                <input type="text" placeholder="Search...">
+                                <button class="button" type="submit">
+                                    <i class="bi bi-search"></i>
+                                </button>
+                            </div>
+                        </form>
+                        <!-- search option end -->
+                    </div>
+                    @Html.Action("RecentPost","Blog")
+                    @Html.Action("Category","Blog")
+                    @Html.Action("Archive","Blog")
+                    @Html.Action("Tag","Blog")
+                </div>
+            </div>
+            <!-- End left sidebar -->
+            <!-- Start single blog -->
+            <div class="col-md-8 col-sm-8 col-xs-12">
+                <div class="row">
+                    @foreach (var item in Model)
+                    {
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                            <div class="single-blog">
+                                <div class="single-blog-img">
+                                    <a href="blog-details.html">
+                                        <img src="@item.Image" alt="">
+                                    </a>
+                                </div>
+                                <div class="blog-meta">
+                                    <span class="comments-type">
+                                        <i class="bi bi-chat"></i>
+                                        <a href="#">1 comments</a>
+                                    </span>
+                                    <span class="date-type">
+                                        <i class="bi bi-calendar"></i>@item.CreDate.Value.ToString("yyyy-MM-dd") / @item.CreDate.Value.ToShortTimeString()
+                                    </span>
+                                </div>
+                                <div class="blog-text">
+                                    <h4>
+                                        <a href="#">@item.Title</a>
+                                    </h4>
+                                    <p>
+                                        @item.Contents
+                                    </p>
+                                </div>
+                                <span>
+                                    <a href="/@Company.Utils.Url.UrlCevir(item.Category.Title).ToLower()/@Company.Utils.Url.UrlCevir(item.Title)" class="ready-btn">Read more</a>
+                                </span>
+                            </div>
+                        </div>
+                    }
+                    <div class="blog-pagination">
+                        <ul class="pagination">
+                            <li class="page-item"><a href="#" class="page-link">&lt;</a></li>
+                            <li class="page-item active"><a href="#" class="page-link">1</a></li>
+                            <li class="page-item"><a href="#" class="page-link">2</a></li>
+                            <li class="page-item"><a href="#" class="page-link">3</a></li>
+                            <li class="page-item"><a href="#" class="page-link">&gt;</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div><!-- End Blog Page -->

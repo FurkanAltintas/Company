@@ -1,0 +1,29 @@
+﻿@model IEnumerable<Company.EntityLayer.Concrete.Blog>
+
+@{
+    string date = DateTime.Now.ToString("MMMM yyyy");
+}
+
+<div class="single-blog-page">
+    <div class="left-blog">
+        <h4>archive</h4>
+        <ul>
+            @foreach (var item in Model)
+            {
+                if (item.CreDate != null && item.CreDate.Value.ToString("MMMM yyyy") == date)
+                {
+
+                }
+                else
+                {
+                <li>
+                    <a href="/@item.CreDate.Value.ToString("yyyy")/@item.CreDate.Value.ToString("MM")">@item.CreDate.Value.ToString("MMMM yyyy")</a>
+                </li>
+                }
+
+                date = item.CreDate.Value.ToString("MMMM yyyy");
+
+            }
+        </ul>
+    </div>
+</div>

@@ -1,0 +1,15 @@
+﻿@model IEnumerable<Company.EntityLayer.Concrete.Category>
+
+<div class="single-blog-page">
+    <div class="left-blog">
+        <h4>categories</h4>
+        <ul>
+            @foreach (var item in Model)
+            {
+                <li>
+                    <a href="/@item.Title">@item.Title</a>
+                </li>
+            }
+            </ul>
+    </div>
+</div>

@@ -1,0 +1,40 @@
+﻿@model Company.EntityLayer.Concrete.Employee
+
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_LayoutAccount.cshtml";
+}
+
+<div class="login-form-bg h-100">
+    <div class="container h-100">
+        <div class="row justify-content-center h-100">
+            <div class="col-xl-6">
+                <div class="form-input-content">
+                    <div class="card login-form mb-0">
+                        <div class="card-body pt-5">
+                            <a class="text-center" href="index.html"> <h4>@ViewBag.Title</h4></a>
+
+                            @using (Html.BeginForm("Login", "Account", FormMethod.Post, new { @class = "mt-5 mb-5 login-input" }))
+                            {
+                                <div class="form-group">
+                                    @Html.TextBoxFor(x => x.Email, new { @class = "form-control", @placeholder = "Email", @type = "email" })
+                                </div>
+
+                                <div class="form-group">
+                                    @Html.PasswordFor(x => x.Password, new { @class = "form-control", @placeholder = "Password" })
+                                </div>
+
+                                <button type="submit" class="btn login-form__btn submit w-100">Sign Up</button>
+
+                                <div class="form-group">
+                                    @ViewBag.Error
+                                </div>
+                            }
+                            @*<p class="mt-5 login-form__footer">Dont have account? <a href="page-register.html" class="text-primary">Sign Up</a> now</p>*@
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

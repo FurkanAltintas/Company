@@ -1,0 +1,26 @@
+﻿@model IEnumerable<Company.EntityLayer.Concrete.Blog>
+
+<div class="single-blog-page">
+    <!-- recent start -->
+    <div class="left-blog">
+        <h4>recent post</h4>
+        <div class="recent-post">
+            <!-- start single post -->
+            @foreach (var item in Model)
+            {
+                <div class="recent-single-post">
+                    <div class="post-img">
+                        <a href="/@Company.Utils.Url.UrlCevir(item.Category.Title).ToLower()/@Company.Utils.Url.UrlCevir(item.Title)">
+                            <img src="@item.Image" alt="">
+                        </a>
+                    </div>
+                    <div class="pst-content">
+                        <p><a href="/@Company.Utils.Url.UrlCevir(item.Category.Title).ToLower()/@Company.Utils.Url.UrlCevir(item.Title)">@item.Title</a></p>
+                    </div>
+                </div>
+            }
+            <!-- End single post -->
+        </div>
+    </div>
+    <!-- recent end -->
+</div>

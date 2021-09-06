@@ -1,0 +1,17 @@
+﻿@model IEnumerable<Company.EntityLayer.Concrete.Tag>
+
+<div class="single-blog-page">
+    <div class="left-tags blog-tags">
+        <div class="popular-tag left-side-tags left-blog">
+            <h4>popular tags</h4>
+            <ul>
+                @foreach (var item in Model)
+                {
+                    <li>
+                        <a href="#">@item.Title</a>
+                    </li>
+                }
+            </ul>
+        </div>
+    </div>
+</div>

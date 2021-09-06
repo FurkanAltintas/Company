@@ -1,0 +1,35 @@
+﻿@model IEnumerable<Company.EntityLayer.Concrete.Services>
+
+<div id="services" class="services-area area-padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="section-headline services-head text-center">
+                    <h2>Our Services</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row text-center">
+            <!-- Start Left services -->
+            @foreach (var item in Model)
+            {
+                <div class="col-md-4 col-sm-4 col-xs-12">
+                    <div class="about-move">
+                        <div class="services-details">
+                            <div class="single-services">
+                                <a class="services-icon" href="#">
+                                    <i class="bi bi-@item.Icon"></i>
+                                </a>
+                                <h4>@item.Title</h4>
+                                <p>
+                                    @item.Contents
+                                </p>
+                            </div>
+                        </div>
+                        <!-- end about-details -->
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>

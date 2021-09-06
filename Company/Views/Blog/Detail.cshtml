@@ -1,0 +1,153 @@
+﻿@model Company.Models.BlogComment
+
+@{
+    ViewBag.Title = "Detail";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<main id="main">
+    
+    <div class="header-bg page-area">
+        <div class="container position-relative">
+            <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                    <div class="slider-content text-center">
+                        <div class="header-bottom">
+                            <div class="layer2">
+                                <h1 class="title2">My Blog</h1>
+                            </div>
+                            <div class="layer3">
+                                <h2 class="title3">Profesional Blog Page</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ======= Blog Page ======= -->
+    <div class="blog-page area-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-4">
+                    <div class="page-head-blog">
+                        <div class="single-blog-page">
+                            <!-- search option start -->
+                            
+                                <div class="search-option">
+                                    <input type="text" placeholder="Search...">
+                                    <button class="button" type="submit">
+                                        <i class="bi bi-search"></i>
+                                    </button>
+                                </div>
+                            
+                            <!-- search option end -->
+                        </div>
+                        @Html.Action("RecentPost","Blog")
+                        @Html.Action("Category","Blog")
+                        @Html.Action("Archive","Blog")
+                        @Html.Action("Tag","Blog")
+                    </div>
+                </div>
+                <!-- End left sidebar -->
+                <!-- Start single blog -->
+                <div class="col-md-8 col-sm-8 col-xs-12">
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                            <!-- single-blog start -->
+                            <article class="blog-post-wrapper">
+                                <div class="post-thumbnail">
+                                    <img src="@Model.Blog.Image" alt="" />
+                                </div>
+                                <div class="post-information">
+                                    <h2>@Model.Blog.Title</h2>
+                                    <div class="entry-meta">
+                                        <span class="author-meta"><i class="bi bi-person"></i> <a href="#">@ViewBag.FullName</a></span>
+                                        <span><i class="bi bi-clock"></i> @Model.Blog.CreDate.Value.ToString("MMMM dd, yyyy")</span>
+                                        <span class="tag-meta">
+                                            <i class="bi bi-folder"></i>
+                                            <a href="#">painting</a>,
+                                            <a href="#">work</a>
+                                        </span>
+                                        <span>
+                                            <i class="bi bi-tags"></i>
+                                            <a href="#">tools</a>,
+                                            <a href="#"> Humer</a>,
+                                            <a href="#">House</a>
+                                        </span>
+                                        <span><i class="bi bi-chat"></i> <a href="#">@Model.CommentList.Count() comments</a></span>
+                                    </div>
+                                    <div class="entry-content">
+                                        <p>
+                                            @Model.Blog.Contents
+                                        </p>
+                                    </div>
+                                </div>
+                            </article>
+                            <div class="clear"></div>
+                            <div class="single-post-comments">
+                                <div class="comments-area">
+                                    <div class="comments-heading">
+                                        <h3>@Model.CommentList.Count() comments</h3>
+                                    </div>
+                                    <div class="comments-list">
+                                        <ul>
+                                            @foreach (var item in Model.CommentList)
+                                            {
+                                            <li>
+                                                <div class="comments-details">
+                                                    <div class="comments-list-img">
+                                                        <img src="~/Content/eBusiness/assets/img/blog/b02.jpg" alt="post-author">
+                                                    </div>
+                                                    <div class="comments-content-wrap">
+                                                        <span>
+                                                            <b><a href="#">@item.Name</a></b>
+                                                            Post author
+                                                            <span class="post-time">@item.CreDate.Value.ToString("MMMM dd, yyyy") at @item.CreDate.Value.ToShortTimeString()</span>
+                                                            <a href="#">Reply</a>
+                                                        </span>
+                                                        <p>@item.Message</p>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            }
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="comment-respond">
+                                    <h3 class="comment-reply-title">Leave a Reply </h3>
+                                    <span class="email-notes">Your email address will not be published. Required fields are marked *</span>
+                                    @using (Html.BeginForm("Comment", "Blog", FormMethod.Post))
+                                    {
+                                        <div class="row">
+                                            <div class="col-lg-4 col-md-4">
+                                                <p>Name *</p>
+                                                @Html.TextBoxFor(x => x.Comment.Name, new { @type ="text"})
+                                            </div>
+                                            <div class="col-lg-4 col-md-4">
+                                                <p>Email *</p>
+                                                @Html.TextBoxFor(x => x.Comment.Email, new { @type = "email" })
+                                            </div>
+                                            <div class="col-lg-4 col-md-4">
+                                                <p>Website</p>
+                                                @Html.TextBoxFor(x => x.Comment.Website, new { @type ="text"})
+                                            </div>
+                                            <div class="col-lg-12 col-md-12 col-sm-12">
+                                                <p>Message</p>
+                                                @Html.TextAreaFor(x => x.Comment.Message, 10,30, new {@id="message-box"})
+                                                <input type="submit" value="Post Comment" />
+                                            </div>
+                                        </div>
+                                    }
+                                </div>
+                            </div>
+                            <!-- single-blog end -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><!-- End Blog Page -->
+
+</main>
